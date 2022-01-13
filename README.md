@@ -1,24 +1,42 @@
-# README
+# Todom
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+### サイトテーマ
+Todolist Management から名前を取りTodom（トゥードム）<br />
+タスクを簡単に整理するというのが本サイトのテーマです。<br />
 
-* Ruby version
+### テーマを選んだ理由
+短期間で実用的なアプリを作るという観点から<br />
+このテーマを選びました。
 
-* System dependencies
+### ターゲットユーザ
+タスクを複数もつ方
 
-* Configuration
+### 主な利用シーン
+タスク整理
 
-* Database creation
+### 機能
+ログイン、ログアウト機能<br />
+退会機能
+タスク投稿機能
+並び替え機能
 
-* Database initialization
 
-* How to run the test suite
+## 設計書
+■アプリケーション詳細設計<br />
+https://docs.google.com/spreadsheets/d/1g1GTXdj9DbnR3aK5oKgtOE1c_pTXyKHjLAKtR-hYakA/edit?usp=sharing<br />
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* ...
+## 使用素材
+
+
+## 作成者
+Tsuyoshi Fujikawa<br />
