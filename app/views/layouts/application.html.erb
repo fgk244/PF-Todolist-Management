@@ -22,25 +22,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav lists-right">
-              <!--<%# if user_signed_in? %>
 
-                <li class= "nav-item">
-                 <button class="btn btn-default"> <%#= link_to "マイページ", class: "link" %></button>
-                </li>
-
-                <li class= "nav-item">
-                  <button class="btn btn-default"><%#= link_to "商品一覧", class: "link" %></button>
-                </li>
-
-                <li class= "nav-item">
-                  <button class="btn btn-default"><%#= link_to "カート", class: "link" %></button>
-                </li>
-
-                <li class="nav-item">
-                  <button class="btn btn-default"><%#= link_to "ログアウト", method: :delete, class: "link" %></button>
-                </li>
-
-              <%# else %> -->
                 <li class= "nav-item">
                   <button class="btn btn-default"><%= link_to "Top", root_path, class: "link" %></button>
                 </li>
@@ -50,13 +32,21 @@
                 </li>
 
                 <li class= "nav-item">
-                  <button class="btn btn-default"><%= link_to "新規登録", class: "link" %></button>
+                  <button class="btn btn-default"><%= link_to "新規登録",signup_path, class: "link" %></button>
                 </li>
 
                 <li class= "nav-item">
-                 <button class="btn btn-default"><%= link_to "ログイン", class: "link" %></button>
+                 <button class="btn btn-default"><%= link_to "ログイン",login_path, class: "link" %></button>
                 </li>
-              <%# end %>
+
+                <li class= "nav-item">
+                 <button class="btn btn-default"><%= link_to "ログアウト",logout_path, class: "link" %></button>
+                </li>
+
+                <li class= "nav-item">
+                 <button class="btn btn-default"><%= link_to "TODO", class: "link" %></button>
+                </li>
+
               </ul>
             </div>
           </div>
@@ -69,6 +59,7 @@
     </main>
 
   </body>
+
 
 
 

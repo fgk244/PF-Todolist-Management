@@ -1,0 +1,28 @@
+<div class="container">
+    <%= form_with model: @user do |f| %>
+      <p class="row col-2">
+      <%= f.label :name, "名前" %>
+      <%= f.text_field :name %>
+      <p>
+
+     <p class="row col-2">
+      <%= f.label :email, "メール" %>
+      <%= f.email_field :email %>
+     <p>
+
+      <p class="row col-2">
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password %>
+      <p>
+
+      <p class="row col-2">
+      <%= f.label :password_confirmation, "パスワード確認" %>
+      <%= f.password_field :password_confirmation %>
+      <p>
+
+      <p class="row col-2">
+      <%= f.submit "新規登録" %>
+      <p>
+
+    <% end %>
+</div>
