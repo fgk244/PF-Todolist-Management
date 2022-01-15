@@ -1,5 +1,5 @@
 <div class="container">
-    <%= form_with model: @user do |f| %>
+    <%= form_with model: @user , local: true, do |f| %>
       <p class="row col-2">
       <%= f.label :name, "名前" %>
       <%= f.text_field :name %>
