@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-   helper_method :current_user
+  helper_method :current_user
   before_action :login_required#全てのアクションを実行する前に、login_requiredメソッドを実行する
 
   private

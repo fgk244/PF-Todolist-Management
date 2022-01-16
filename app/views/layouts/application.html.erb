@@ -23,6 +23,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav lists-right">
 
+
                 <li class= "nav-item">
                   <button class="btn btn-default"><%= link_to "Top", root_path, class: "link" %></button>
                 </li>
@@ -39,13 +40,24 @@
                  <button class="btn btn-default"><%= link_to "ログイン",login_path, class: "link" %></button>
                 </li>
 
+                 <!-- <li class= "nav-item">
+                  <button class="btn btn-default"><%#= link_to "Top", root_path, class: "link" %></button>
+                </li>
+
+                 <li class= "nav-item">
+                   <button class="btn btn-default"><%#= link_to "About",homes_about_path, class: "link" %></button>
+                </li>
+                 -->
+
                 <li class= "nav-item">
-                 <button class="btn btn-default"><%= link_to "ログアウト",logout_path, class: "link" %></button>
+                 <button class="btn btn-default"><%= link_to "ログアウト",logout_path, method: :delete, class: "link" %></button>
                 </li>
 
                 <li class= "nav-item">
                  <button class="btn btn-default"><%= link_to "TODO",todos_path, class: "link" %></button>
                 </li>
+
+
 
               </ul>
             </div>
