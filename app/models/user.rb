@@ -1,7 +1,20 @@
 class User < ApplicationRecord
 
-  validates :name,  presence: true, length: { maximum: 50 }
-  validates :email, presence: true, uniqueness: true, length: { maximum: 255 }
-  has_secure_password
+ has_secure_password validations: true
+ validates :mail, presence: true, uniqueness: true
+
+ has_many :todos
+
+ has_many :todos, :dependent => :destroy
+# 退会ユーザーに紐づくTODOを削除する
+
+
+  def self.new_remember_token
+      SecureRandom.urlsafe_base64
+  end
+
+  def self.encrypt(token)
+      Digest::SHA256.hexdigest(token.to_s)
+  end
 
 end

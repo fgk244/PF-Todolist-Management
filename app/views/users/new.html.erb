@@ -1,23 +1,24 @@
 <div class="container">
-     <%= form_for(@user) do |f| %>
+     <%= form_for @user, url: users_path do |f| %>
+     <%#= form_error(@user) %>
       <p class="row col-2">
       <%= f.label :name, "名前" %>
       <%= f.text_field :name %>
       <p>
 
      <p class="row col-2">
-      <%= f.label :email, "メール" %>
-      <%= f.email_field :email %>
+      <%= f.label :mail, "メール" %>
+      <%= f.text_field :mail %>
      <p>
 
       <p class="row col-2">
       <%= f.label :password, "パスワード" %>
-      <%= f.password_field :password %>
+      <%= f.text_field :password %>
       <p>
 
       <p class="row col-2">
       <%= f.label :password_confirmation, "パスワード確認" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.text_field :password_confirmation %>
       <p>
 
       <p class="row col-2">

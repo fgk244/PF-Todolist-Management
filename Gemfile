@@ -65,3 +65,6 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'bcrypt',         '3.1.12'
 gem 'sorcery', '~> 0.12.0'
+
+gem 'byebug'
+gem 'pry-rails'

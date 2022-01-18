@@ -4,6 +4,7 @@ class CreateTodos < ActiveRecord::Migration[5.2]
       t.string :date
       t.string :contents
       t.string :memo
+      t.integer :user_id
 
       t.timestamps
     end

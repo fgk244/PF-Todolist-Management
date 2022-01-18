@@ -13,3 +13,24 @@
  */
  @import "bootstrap";
 
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN";
+  }
+
+
+.top-wrapper {
+    padding: 180px 0 100px 0;
+    background-image: url(https://media.freestocktextures.com/cache/b9/71/b97113e32d32944ef1daad2644f1882d.jpg);
+    background-size: cover;
+    color: black;
+    text-align: center;
+  }
+
+  .btn-wrapper {
+    margin: 20px 0;
+  }
+
+  .btn {
+  color: blue;
+  }

@@ -7,19 +7,23 @@
 
 
  <table class='table table-hover '>
-  　<thead>
+   <thead>
     <tr>
       <th class="col-1">日付</th>
       <th class="col-3">内容</th>
       <th class="col-2">メモ</th>
+      <th class="col-1">
+      <th class="col-1">
     </tr>
     </thead>
     <tbody>
-    <% @todos.each do |todo| %>
-    　<tr>
+    <% @mytodos.each do |todo| %>
+     <tr>
         <td><%= todo.date %></td>
         <td><%= todo.contents %></td>
         <td><%= todo.memo %></td>
+        <td><%= link_to "編集", edit_todo_path(todo.id), class: "btn btn-secondary" %></td>
+        <td><%= link_to "削除", todo_path(todo.id), method: :delete, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
     </tbody>
@@ -32,8 +36,8 @@
     <div class="col-sm-12 col-md-8 col-lg-5 mx-auto">
       <h3 class="my-3">TODO入力</h3>
 
-　    <%= form_with model: @todo, local:true do |f| %>
-　     <div class="form-group">
+     <%= form_with model: @todo, local:true do |f| %>
+      <div class="form-group">
         <%= f.label :日付 %>
         <%= f.date_field :date, class: "form-control" %>
       </div>
@@ -55,9 +59,6 @@
       </div>
       <% end %>
     </div>
-　</div>
-
-
-
+ </div>
 
 </div>

@@ -1,30 +1,37 @@
 class UsersController < ApplicationController
 
-  skip_before_action :login_required
+  skip_before_action :require_sign_in!, only: [:new, :create]
 
-  def show
-    @user = User.find(params[:id])
-  end
 
-  def new
+ def new
     @user = User.new
-  end
+ end
 
-  def create
+ def create
     @user = User.new(user_params)
     if @user.save
-      login @user
-      redirect_to @user
+      redirect_to login_path
     else
       render 'new'
     end
-  end
+ end
+
+ def destroy
+      @user = User.find(params[:id])
+      @user.destroy
+      flash[:notice] = '退会が完了しました。'
+      redirect_to :root
+ end
+
 
   private
 
-  def user_params
-    params.require(:user).permit(:name, :email, :password,
-     :password_confirmation)
-  end
+ def user_params
+      params.require(:user).permit(:name, :mail, :password, :password_confirmation)
+ end
+
+ def set_user
+     @user = User.find_by(:id => params[:id])
+ end
 
 end

@@ -16,14 +16,16 @@ ActiveRecord::Schema.define(version: 2022_01_16_050921) do
     t.string "date"
     t.string "contents"
     t.string "memo"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
+    t.string "name", limit: 191, null: false
+    t.string "mail", limit: 191, null: false
+    t.string "password_digest", limit: 191, null: false
+    t.string "remember_token", limit: 191
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

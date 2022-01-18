@@ -1,29 +1,44 @@
 class SessionsController < ApplicationController
 
-skip_before_action :login_required
+
+  skip_before_action :require_sign_in!, only: [:new, :create]
+  before_action :set_user, only: [:create]
 
  def new
- end
+  end
 
-def create
-##送信されたメールアドレスを使って、データベースからユーザーを取り出しています##
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      login_path
-      redirect_to root_path
+  def create
+    if @user.authenticate(session_params[:password])
+      sign_in(@user)
+      redirect_to todos_path
     else
-      flash.now[:danger] = 'Invalid email/password combination'
+      flash.now[:danger] = t('.flash.invalid_password')
       render 'new'
     end
+  end
+
+  def destroy
+    sign_out
+    redirect_to login_path, notice: 'ログアウトしました。'
+  end
+
+  private
+
+    def set_user
+      @user = User.find_by!(mail: session_params[:mail])
+    rescue
+      flash.now[:danger] = t('.flash.invalid_mail')
+      render action: 'new'
+    end
+
+    # 許可するパラメータ
+    def session_params
+      params.require(:session).permit(:mail, :password)
+    end
+
+
+
 end
 
-def log_in(user)
-    session[:user_id] = user.id
-end
 
-def destroy
-    reset_session
-    redirect_to root_path, notice: 'ログアウトしました。'
-end
 
-end
