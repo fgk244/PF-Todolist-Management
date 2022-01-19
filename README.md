@@ -20,12 +20,12 @@ Todolist Management から名前を取りTodom（トゥードム）<br />
 ログイン、ログアウト機能<br />
 退会機能
 タスク投稿機能
-並び替え機能
+タスクの日付昇順並び替え機能
 
 
 ## 設計書
 ■アプリケーション詳細設計<br />
-https://docs.google.com/spreadsheets/d/1g1GTXdj9DbnR3aK5oKgtOE1c_pTXyKHjLAKtR-hYakA/edit?usp=sharing<br />
+https://docs.google.com/spreadsheets/d/1mORo_MrT27-XEvr8Y0kXZYfo2Q_JpTu9jUqs2eLhbbg/edit?usp=sharing<br />
 
 
 ## 開発環境
