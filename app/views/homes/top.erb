@@ -1,14 +1,28 @@
+ <% if signed_in? %>
  <body>
     <div class="top-wrapper">
       <div class="container">
         <h1>タスクを整理しましょう</h1>
         <h1>Organize your tasks.</h1>
         <p>Todomの説明はAboutページに記載しております。</p>
-        <div class="btn-wrapper">
-          <a href="new_user_path" class="btn">新規登録はこちら</a>
-          <p>既に登録されている方はログインボタンからお進みください。</p>
-          <a href="login_path" class="btn">ログイン</a>
-        </div>
       </div>
     </div>
+  </body>
+  <% else %>
   <body>
+    <div class="top-wrapper">
+      <div class="container">
+        <h1>タスクを整理しましょう</h1>
+        <h1>Organize your tasks.</h1>
+        <p>Todomの説明はAboutページに記載しております。</p>
+        <section>
+        <div class="btn-wrapper">
+          <a href="/users/new" class="btn01">新規登録はこちら</a>
+          <p>既に登録されている方はログインボタンからお進みください。</p>
+          <a href="/login" class="btn01">ログイン</a>
+        </div>
+        </section>
+      </div>
+    </div>
+  </body>
+  <% end %>
